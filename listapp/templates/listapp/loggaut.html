@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "listapp/mall.html" %}
 {% load crispy_forms_tags %}
 
@@ -10,4 +11,18 @@
         </small>
     </div>
 </div>
+=======
+{% extends "listapp/mall.html" %}
+{% load crispy_forms_tags %}
+
+{% block innehall %}
+<div class="content-section">
+<h2>Du är utloggad</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Logga in igen? <a class="ml-2" href="{% url 'loggain' %}">Logga in</a>
+        </small>
+    </div>
+</div>
+>>>>>>> 150be0923a9ecd019065f85aee4dd29c7e725efc
 {% endblock innehall %}

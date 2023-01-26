@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "listapp/mall.html" %}
 {% load crispy_forms_tags %}
 
@@ -5,10 +6,11 @@
 <div class="container py-5">
 	<form method="POST">
 		{% csrf_token %}
+		
 		<fieldset>
-			<legend>{{status.status}} vara</legend> 
-		{{ form|crispy }}  
-	</fieldset>                    
+			<legend>{{ status.status }} vara</legend>
+			{{ form|crispy }}
+		</fieldset>                    
 		<button class="btn btn-primary" type="submit">Spara vara</button>
 		{% if status.status == "Ny" %}
 		<a class="btn btn-primary" href="{% url 'lista-sida' status.listID %}">Ångra</a>
@@ -18,4 +20,27 @@
 		{% endif %}
 	</form>
 </div>
+=======
+{% extends "listapp/mall.html" %}
+{% load crispy_forms_tags %}
+
+{% block innehall %}
+<div class="container py-5">
+	<form method="POST">
+		{% csrf_token %}
+		
+		<fieldset>
+			<legend>{{ status.status }} vara</legend>
+			{{ form|crispy }}
+		</fieldset>                    
+		<button class="btn btn-primary" type="submit">Spara vara</button>
+		{% if status.status == "Ny" %}
+		<a class="btn btn-primary" href="{% url 'lista-sida' status.listID %}">Ångra</a>
+		{% endif %}
+		{% if status.status == "Uppdatera" %}
+		<a class="btn btn-primary" href="{% url 'lista-sida' object.list.id %}">Ångra</a>
+		{% endif %}
+	</form>
+</div>
+>>>>>>> 150be0923a9ecd019065f85aee4dd29c7e725efc
 {% endblock innehall %}
